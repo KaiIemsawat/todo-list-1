@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import style from "./Styles.module.css";
 
 const Todo = () => {
     const [addNewTodo, setAddNewTodo] = useState("");
@@ -45,7 +46,7 @@ const Todo = () => {
     };
 
     return (
-        <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center" }} className={style.mainContainer}>
             <form
                 onSubmit={(e) => {
                     handleNewTodo(e);
@@ -70,7 +71,7 @@ const Todo = () => {
                     textDecoration: "line-through",
                 };
                 return (
-                    <div key={index}>
+                    <div key={index} className={style.list}>
                         <input
                             type="checkbox"
                             checked={eachTodo.isCompleted}
